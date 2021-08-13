@@ -1,6 +1,13 @@
 <div class="py-4">
   <h3>Liste des utilisateurs</h3>
   <ul class="py-2">
-    <li *ngFor="let user of users">{{ user }}</li>
+    <li *ngFor="let user of users; let index = index">
+      <div class="d-flex container">
+        <div class="w-100">
+          <span>{{ user.nom }}</span>
+        </div>
+        <button class="btn btn-danger" (click)="deleteUser(index)"><img src="assets/svg/delete_white_24dp.svg"></button>
+      </div>
+    </li>
   </ul>
 </div>
